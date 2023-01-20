@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import MovieDetailPage from "../movieDetailedPage";
 import styles from "./styles.module.css";
 const MovieCard = ({ movies }) => {
   return (

@@ -118,7 +118,7 @@ const MovieDetailPage = () => {
                   Genre 🎞
                   {movie.genres &&
                     movie.genres.map((genre, i) => {
-                      if (i == movie.genres.length - 1) {
+                      if (i === movie.genres.length - 1) {
                         return <span key={genre}>{genre}</span>;
                       }
                       return <span key={genre}>{genre} |</span>;
