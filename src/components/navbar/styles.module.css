@@ -1,0 +1,15 @@
+nav{
+    border: 1px solid black;
+    margin-bottom: 1rem;
+}
+.navbar{
+    padding: 1rem;
+    
+}
+.logo{
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+}

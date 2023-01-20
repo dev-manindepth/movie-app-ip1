@@ -1,0 +1,47 @@
+.episode {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.episode__image__container {
+  max-width: 500px;
+  width: 100%;
+}
+.noimage {
+  border: 1px solid black;
+  height: 600px;
+  display: grid;
+  place-items: center;
+}
+img {
+  width: 100%;
+}
+.episode__details__container {
+  max-width: 700px;
+  padding: 1rem;
+}
+
+.show__image {
+  height: 450px;
+  width: 100%;
+}
+.show__image img {
+    height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 1300px) {
+  .episode__image__container {
+    max-width: 100%;
+    width: 100%;
+    padding: 1rem;
+  }
+  .episode__details__container {
+    max-width: 100%;
+    width: 100%;
+  }
+}
