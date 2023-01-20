@@ -16,7 +16,7 @@ const MovieDetailPage = () => {
   const { movieId } = useParams();
   const initialValues = {
     noOfSeats: 2,
-    movieName: movie?.name,
+    movieName: "",
     email: "",
     name: "",
   };
@@ -45,7 +45,7 @@ const MovieDetailPage = () => {
         const response = await fetch(`https://api.tvmaze.com/shows/${movieId}`);
         const movieData = await response.json();
         setMovie(movieData);
-
+        setFormData({ ...formData, movieName: movie.name });
         setLoading(false);
       } catch (err) {
         setLoading(false);
@@ -60,6 +60,9 @@ const MovieDetailPage = () => {
       setFormData(formData);
     }
   }, []);
+  useEffect(() => {
+    localStorage.setItem("formData", JSON.stringify(formData));
+  }, [formData]);
   useEffect(() => {
     const nextEpisodeId = getNextEpisodeId();
     const prevEpisodeId = getPrevEpisodeId();
@@ -132,6 +135,7 @@ const MovieDetailPage = () => {
                     setShowForm={setShowForm}
                     formData={formData}
                     setFormData={setFormData}
+                    movieName={movie.name}
                   />
                 )}
                 {nextEpisode && (

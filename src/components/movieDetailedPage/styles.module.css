@@ -40,6 +40,7 @@ button{
   outline: none;
   border-radius: .2rem;
   margin: .8rem 0rem;
+  cursor: pointer;
 }
 @media (max-width: 1350px) {
   .movie__image__container {

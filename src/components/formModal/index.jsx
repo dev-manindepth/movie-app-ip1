@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./styles.module.css";
 import { useEffect } from "react";
 import HashLoadingSpinner from "../loader/hashLoader";
-const FormModal = ({ setShowForm ,formData,setFormData}) => {
+const FormModal = ({ setShowForm ,movieName,formData,setFormData}) => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState("");
   const [inputError, setInputError] = useState({});
@@ -11,6 +11,9 @@ const FormModal = ({ setShowForm ,formData,setFormData}) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
+  useEffect(()=>{
+    setFormData({...formData,movieName})
+  },[])
   const handleTicketBook = () => {
     const validFormData = validateForm();
     if (!validFormData) {
@@ -45,9 +48,7 @@ const FormModal = ({ setShowForm ,formData,setFormData}) => {
   };
 
  
-  useEffect(() => {
-    localStorage.setItem("formData", JSON.stringify(formData));
-  }, [formData]);
+
 
   return (
     <div className={styles.modal}>

@@ -39,6 +39,7 @@
   right: 1rem;
   top: 0.8rem;
   transform: scale(1.5);
+  cursor: pointer;
 }
 
 input {
